@@ -6,14 +6,14 @@ const categories = ['All', 'Events', 'Charity', 'Social', 'Club'];
 
 /* Generate a unique gradient for each image based on its index */
 const gradients = [
-  'from-navy via-royal to-navy-light',
-  'from-royal via-royal-light to-navy',
-  'from-navy-light via-navy to-royal',
-  'from-royal-light via-royal to-navy-light',
-  'from-navy via-navy-light to-royal-light',
-  'from-royal to-navy via-royal-light',
-  'from-navy-light to-royal via-navy',
-  'from-navy via-royal-light to-royal',
+  'from-black-rich via-grey-dark to-black-soft',
+  'from-grey-dark via-grey to-black-rich',
+  'from-black-soft via-black-rich to-grey-dark',
+  'from-grey via-grey-dark to-black-soft',
+  'from-black-rich via-black-soft to-grey',
+  'from-grey-dark to-black-rich via-grey',
+  'from-black-soft to-grey-dark via-black-rich',
+  'from-black-rich via-grey to-grey-dark',
 ];
 
 const gradientAngles = [
@@ -53,8 +53,8 @@ export default function Gallery() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative bg-navy noise-bg overflow-hidden">
-        <div className="geo-pattern absolute inset-0" />
+      <section className="relative bg-black-rich noise-bg overflow-hidden">
+        <div className="spoke-pattern absolute inset-0" />
         <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8 pt-32 pb-20 md:pt-40 md:pb-28">
           <div className="flex items-center gap-3 mb-6">
             <span className="block w-12 h-px bg-gold/60" />
@@ -62,19 +62,19 @@ export default function Gallery() {
               Moments
             </span>
           </div>
-          <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-bold text-cream tracking-tight">
+          <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-bold text-off-white tracking-tight">
             Gallery
           </h1>
-          <p className="mt-5 text-lg text-slate max-w-xl leading-relaxed">
+          <p className="mt-5 text-lg text-grey-light max-w-xl leading-relaxed">
             A look back at the events, socials, and community projects that make
             RT54 what it is.
           </p>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-cream to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-off-white to-transparent" />
       </section>
 
       {/* ── Filters ── */}
-      <section className="bg-cream py-12 md:py-16">
+      <section className="bg-off-white py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="reveal flex flex-wrap gap-3 mb-12 md:mb-16">
             {categories.map((cat) => (
@@ -83,8 +83,8 @@ export default function Gallery() {
                 onClick={() => setActive(cat)}
                 className={`px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide uppercase transition-all duration-300 ${
                   active === cat
-                    ? 'bg-gold text-navy shadow-lg shadow-gold/20'
-                    : 'bg-white text-slate border border-slate/20 hover:border-gold/40 hover:text-gold'
+                    ? 'bg-crimson text-white shadow-lg shadow-crimson/20'
+                    : 'bg-white-pure text-grey-dark border border-grey-light/20 hover:bg-grey-light/20'
                 }`}
               >
                 {cat}
@@ -109,7 +109,7 @@ export default function Gallery() {
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
                       {/* Camera icon */}
                       <svg
-                        className="w-12 h-12 text-cream/20 mb-4"
+                        className="w-12 h-12 text-off-white/20 mb-4"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -126,20 +126,20 @@ export default function Gallery() {
                           d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Z"
                         />
                       </svg>
-                      <h3 className="font-[family-name:var(--font-display)] text-cream/30 text-lg font-bold">
+                      <h3 className="font-[family-name:var(--font-display)] text-off-white/30 text-lg font-bold">
                         {image.title}
                       </h3>
                     </div>
 
                     {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-navy/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center">
+                    <div className="absolute inset-0 bg-black-rich/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center">
                       <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-gold/20 text-gold mb-4">
                         {image.category}
                       </span>
-                      <h3 className="font-[family-name:var(--font-display)] text-cream text-xl font-bold mb-2">
+                      <h3 className="font-[family-name:var(--font-display)] text-off-white text-xl font-bold mb-2">
                         {image.title}
                       </h3>
-                      <p className="text-slate text-sm leading-relaxed max-w-xs">
+                      <p className="text-grey-light text-sm leading-relaxed max-w-xs">
                         {image.description}
                       </p>
                     </div>
@@ -150,7 +150,7 @@ export default function Gallery() {
           </div>
 
           {filtered.length === 0 && (
-            <p className="text-center text-slate py-16 text-lg">
+            <p className="text-center text-grey-light py-16 text-lg">
               No photos in this category yet.
             </p>
           )}

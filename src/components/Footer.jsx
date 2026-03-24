@@ -26,7 +26,7 @@ function XIcon({ className = '' }) {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-navy text-cream/80">
+    <footer className="relative bg-black-rich text-grey-light/80">
       {/* Gold accent line */}
       <div className="h-[3px] bg-gradient-to-r from-transparent via-gold to-transparent" />
 
@@ -37,7 +37,7 @@ export default function Footer() {
             <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-gold mb-4">
               Round Table 54
             </h3>
-            <p className="text-sm leading-relaxed text-cream/60 mb-5 max-w-xs">
+            <p className="text-sm leading-relaxed text-grey-light/60 mb-5 max-w-xs">
               King&rsquo;s Lynn &amp; District Round Table 54 &mdash; a social and charitable
               community for men aged 18&ndash;45. We raise funds, make friends, and have a
               brilliant time doing it.
@@ -57,7 +57,7 @@ export default function Footer() {
                 <li key={to}>
                   <Link
                     to={to}
-                    className="text-sm text-cream/60 hover:text-gold-light transition-colors duration-200"
+                    className="text-sm text-grey-light/60 hover:text-white-pure transition-colors duration-200"
                   >
                     {label}
                   </Link>
@@ -71,7 +71,7 @@ export default function Footer() {
             <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-gold mb-4">
               Connect
             </h3>
-            <p className="text-sm text-cream/60 mb-5">
+            <p className="text-sm text-grey-light/60 mb-5">
               Follow us for event updates, photos, and the occasional questionable banter.
             </p>
             <div className="flex items-center gap-4">
@@ -80,7 +80,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="w-10 h-10 rounded-full border border-cream/10 flex items-center justify-center text-cream/50 hover:text-gold hover:border-gold/40 transition-all duration-200"
+                className="w-10 h-10 rounded-full border border-grey-light/10 flex items-center justify-center text-grey-light/50 hover:text-crimson hover:border-crimson/40 transition-all duration-200"
               >
                 <FacebookIcon className="w-5 h-5" />
               </a>
@@ -89,7 +89,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X (Twitter)"
-                className="w-10 h-10 rounded-full border border-cream/10 flex items-center justify-center text-cream/50 hover:text-gold hover:border-gold/40 transition-all duration-200"
+                className="w-10 h-10 rounded-full border border-grey-light/10 flex items-center justify-center text-grey-light/50 hover:text-crimson hover:border-crimson/40 transition-all duration-200"
               >
                 <XIcon className="w-5 h-5" />
               </a>
@@ -98,7 +98,7 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-cream/40">
+        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-grey-light/40">
           <p>&copy; 2026 King&rsquo;s Lynn &amp; District Round Table 54. All rights reserved.</p>
           <p>
             Part of{' '}
@@ -106,7 +106,7 @@ export default function Footer() {
               href="https://roundtable.co.uk"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cream/50 hover:text-gold-light transition-colors duration-200 underline underline-offset-2"
+              className="text-grey-light/50 hover:text-white-pure transition-colors duration-200 underline underline-offset-2"
             >
               Round Table
             </a>{' '}

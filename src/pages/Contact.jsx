@@ -12,7 +12,7 @@ const hearAboutOptions = [
 ];
 
 const inputClass =
-  'w-full bg-white border border-slate/20 rounded-xl px-5 py-3.5 text-charcoal placeholder:text-slate/50 outline-none transition-all duration-300 focus:border-gold focus:ring-2 focus:ring-gold/20 focus:shadow-lg focus:shadow-gold/5';
+  'w-full bg-white border border-grey-light/20 rounded-xl px-5 py-3.5 text-black-rich placeholder:text-grey-light/50 outline-none transition-all duration-300 focus:border-crimson focus:ring-2 focus:ring-crimson/20 focus:shadow-lg focus:shadow-crimson/5';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -37,8 +37,8 @@ export default function Contact() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative bg-navy noise-bg overflow-hidden">
-        <div className="geo-pattern absolute inset-0" />
+      <section className="relative bg-black-rich noise-bg overflow-hidden">
+        <div className="spoke-pattern absolute inset-0" />
         <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8 pt-32 pb-20 md:pt-40 md:pb-28">
           <div className="flex items-center gap-3 mb-6">
             <span className="block w-12 h-px bg-gold/60" />
@@ -46,19 +46,19 @@ export default function Contact() {
               Say Hello
             </span>
           </div>
-          <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-bold text-cream tracking-tight">
+          <h1 className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-bold text-off-white tracking-tight">
             Get In Touch
           </h1>
-          <p className="mt-5 text-lg text-slate max-w-xl leading-relaxed">
+          <p className="mt-5 text-lg text-grey-light max-w-xl leading-relaxed">
             Interested in joining, volunteering, or just want to know more?
             We&apos;d love to hear from you.
           </p>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-cream to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-off-white to-transparent" />
       </section>
 
       {/* ── Main Content ── */}
-      <section className="bg-cream py-16 md:py-24">
+      <section className="bg-off-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
             {/* ── Left: Contact Form ── */}
@@ -82,20 +82,20 @@ export default function Contact() {
                         />
                       </svg>
                     </div>
-                    <h3 className="font-[family-name:var(--font-display)] text-3xl font-bold text-navy mb-3">
+                    <h3 className="font-[family-name:var(--font-display)] text-3xl font-bold text-black-rich mb-3">
                       Message Sent!
                     </h3>
-                    <p className="text-charcoal/70 text-lg max-w-md mx-auto leading-relaxed">
+                    <p className="text-black-rich/70 text-lg max-w-md mx-auto leading-relaxed">
                       Thanks for getting in touch, {form.name.split(' ')[0] || 'mate'}.
                       We&apos;ll get back to you as soon as we can.
                     </p>
                   </div>
                 ) : (
                   <>
-                    <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-bold text-navy mb-2">
+                    <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-bold text-black-rich mb-2">
                       Send Us a Message
                     </h2>
-                    <p className="text-slate mb-10">
+                    <p className="text-grey-light mb-10">
                       Fill in the form below and we&apos;ll be in touch.
                     </p>
 
@@ -104,7 +104,7 @@ export default function Contact() {
                       <div>
                         <label
                           htmlFor="name"
-                          className="block text-sm font-semibold text-navy mb-2 uppercase tracking-wide"
+                          className="block text-sm font-semibold text-black-rich mb-2 uppercase tracking-wide"
                         >
                           Name
                         </label>
@@ -124,7 +124,7 @@ export default function Contact() {
                       <div>
                         <label
                           htmlFor="email"
-                          className="block text-sm font-semibold text-navy mb-2 uppercase tracking-wide"
+                          className="block text-sm font-semibold text-black-rich mb-2 uppercase tracking-wide"
                         >
                           Email
                         </label>
@@ -144,7 +144,7 @@ export default function Contact() {
                       <div>
                         <label
                           htmlFor="hearAbout"
-                          className="block text-sm font-semibold text-navy mb-2 uppercase tracking-wide"
+                          className="block text-sm font-semibold text-black-rich mb-2 uppercase tracking-wide"
                         >
                           How did you hear about us?
                         </label>
@@ -155,7 +155,7 @@ export default function Contact() {
                             value={form.hearAbout}
                             onChange={handleChange}
                             className={`${inputClass} appearance-none pr-10 ${
-                              !form.hearAbout ? 'text-slate/50' : 'text-charcoal'
+                              !form.hearAbout ? 'text-grey-light/50' : 'text-black-rich'
                             }`}
                           >
                             {hearAboutOptions.map((opt) => (
@@ -165,7 +165,7 @@ export default function Contact() {
                             ))}
                           </select>
                           <svg
-                            className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate/40 pointer-events-none"
+                            className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-grey-light/40 pointer-events-none"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -184,7 +184,7 @@ export default function Contact() {
                       <div>
                         <label
                           htmlFor="message"
-                          className="block text-sm font-semibold text-navy mb-2 uppercase tracking-wide"
+                          className="block text-sm font-semibold text-black-rich mb-2 uppercase tracking-wide"
                         >
                           Message
                         </label>
@@ -203,7 +203,7 @@ export default function Contact() {
                       {/* Submit */}
                       <button
                         type="submit"
-                        className="w-full sm:w-auto px-10 py-4 bg-gold text-navy font-bold rounded-full tracking-wide uppercase text-sm hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20 hover:shadow-gold/30 hover:scale-[1.02] active:scale-[0.98]"
+                        className="w-full sm:w-auto px-10 py-4 bg-crimson hover:bg-crimson-dark text-white font-bold rounded-full tracking-wide uppercase text-sm transition-all duration-300 shadow-lg shadow-crimson/20 hover:shadow-crimson/30 hover:scale-[1.02] active:scale-[0.98]"
                       >
                         Send Message
                       </button>
@@ -216,8 +216,8 @@ export default function Contact() {
             {/* ── Right: Info Panel ── */}
             <div className="lg:col-span-2 space-y-8">
               {/* Join Round Table */}
-              <div className="reveal bg-navy rounded-3xl overflow-hidden noise-bg relative">
-                <div className="geo-pattern absolute inset-0" />
+              <div className="reveal bg-black-rich rounded-3xl overflow-hidden noise-bg relative">
+                <div className="spoke-pattern absolute inset-0" />
                 <div className="relative z-10 p-8 md:p-10">
                   <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-6">
                     <svg
@@ -235,15 +235,15 @@ export default function Contact() {
                     </svg>
                   </div>
 
-                  <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-cream mb-4">
+                  <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-off-white mb-4">
                     Join Round Table
                   </h3>
 
-                  <p className="text-slate leading-relaxed mb-3">
+                  <p className="text-grey-light leading-relaxed mb-3">
                     Open to men aged <span className="text-gold font-semibold">18&ndash;45</span>. No commitment
                     needed — just come along to a meeting and see what you think.
                   </p>
-                  <p className="text-slate leading-relaxed">
+                  <p className="text-grey-light leading-relaxed">
                     Good company, great events, and the chance to make a real
                     difference in your community.
                   </p>
@@ -252,7 +252,7 @@ export default function Contact() {
 
               {/* Social Links */}
               <div className="reveal bg-white rounded-3xl p-8 md:p-10 shadow-sm">
-                <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-navy mb-6">
+                <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-black-rich mb-6">
                   Find Us Online
                 </h3>
 
@@ -262,16 +262,16 @@ export default function Contact() {
                     href="https://www.facebook.com/KingsLynnRT/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl border border-slate/10 hover:border-gold/30 hover:bg-gold/5 transition-all duration-300 group"
+                    className="flex items-center gap-4 p-4 rounded-xl border border-grey-light/10 hover:border-crimson/30 hover:bg-crimson/5 transition-all duration-300 group"
                   >
-                    <div className="w-10 h-10 rounded-full bg-royal/10 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-300">
-                      <svg className="w-5 h-5 text-royal group-hover:text-gold transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="w-10 h-10 rounded-full bg-grey-dark/10 flex items-center justify-center group-hover:bg-crimson/10 transition-colors duration-300">
+                      <svg className="w-5 h-5 text-grey-dark group-hover:text-crimson transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-navy text-sm">Facebook</p>
-                      <p className="text-slate text-xs">@KingsLynnRT</p>
+                      <p className="font-semibold text-black-rich text-sm">Facebook</p>
+                      <p className="text-grey-light text-xs">@KingsLynnRT</p>
                     </div>
                   </a>
 
@@ -280,16 +280,16 @@ export default function Contact() {
                     href="https://x.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl border border-slate/10 hover:border-gold/30 hover:bg-gold/5 transition-all duration-300 group"
+                    className="flex items-center gap-4 p-4 rounded-xl border border-grey-light/10 hover:border-crimson/30 hover:bg-crimson/5 transition-all duration-300 group"
                   >
-                    <div className="w-10 h-10 rounded-full bg-royal/10 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-300">
-                      <svg className="w-5 h-5 text-royal group-hover:text-gold transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="w-10 h-10 rounded-full bg-grey-dark/10 flex items-center justify-center group-hover:bg-crimson/10 transition-colors duration-300">
+                      <svg className="w-5 h-5 text-grey-dark group-hover:text-crimson transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-navy text-sm">X (Twitter)</p>
-                      <p className="text-slate text-xs">Follow us</p>
+                      <p className="font-semibold text-black-rich text-sm">X (Twitter)</p>
+                      <p className="text-grey-light text-xs">Follow us</p>
                     </div>
                   </a>
 
@@ -298,16 +298,16 @@ export default function Contact() {
                     href="https://www.roundtable.co.uk"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl border border-slate/10 hover:border-gold/30 hover:bg-gold/5 transition-all duration-300 group"
+                    className="flex items-center gap-4 p-4 rounded-xl border border-grey-light/10 hover:border-crimson/30 hover:bg-crimson/5 transition-all duration-300 group"
                   >
-                    <div className="w-10 h-10 rounded-full bg-royal/10 flex items-center justify-center group-hover:bg-gold/10 transition-colors duration-300">
-                      <svg className="w-5 h-5 text-royal group-hover:text-gold transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <div className="w-10 h-10 rounded-full bg-grey-dark/10 flex items-center justify-center group-hover:bg-crimson/10 transition-colors duration-300">
+                      <svg className="w-5 h-5 text-grey-dark group-hover:text-crimson transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.92 17.92 0 0 1-8.716-2.247m0 0A8.966 8.966 0 0 1 3 12c0-1.264.26-2.467.732-3.558" />
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-navy text-sm">Round Table GB&I</p>
-                      <p className="text-slate text-xs">roundtable.co.uk</p>
+                      <p className="font-semibold text-black-rich text-sm">Round Table GB&I</p>
+                      <p className="text-grey-light text-xs">roundtable.co.uk</p>
                     </div>
                   </a>
                 </div>
@@ -315,7 +315,7 @@ export default function Contact() {
 
               {/* Motto */}
               <div className="reveal text-center py-6">
-                <p className="font-[family-name:var(--font-display)] text-xl text-navy/30 italic tracking-wide">
+                <p className="font-[family-name:var(--font-display)] text-xl text-black-rich/30 italic tracking-wide">
                   Adopt. Adapt. Improve.
                 </p>
               </div>

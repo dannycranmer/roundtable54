@@ -10,35 +10,14 @@ const links = [
   { to: '/contact', label: 'Contact' },
 ];
 
-/* ── Simplified Round Table shield / circular emblem ── */
-function ShieldIcon({ className = '' }) {
+/* ── Roundel logo ── */
+function RoundelLogo({ className = '' }) {
   return (
-    <svg
-      viewBox="0 0 48 48"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden="true"
-    >
-      {/* Outer ring */}
-      <circle cx="24" cy="24" r="22" stroke="#c5a44e" strokeWidth="2.5" />
-      {/* Inner ring */}
-      <circle cx="24" cy="24" r="17" stroke="#c5a44e" strokeWidth="1.2" opacity="0.6" />
-      {/* Table top — horizontal ellipse */}
-      <ellipse cx="24" cy="26" rx="12" ry="4" stroke="#c5a44e" strokeWidth="1.5" fill="#c5a44e" fillOpacity="0.15" />
-      {/* Crown / top motif */}
-      <path
-        d="M18 16l3-4 3 3 3-3 3 4"
-        stroke="#c5a44e"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      {/* Table leg */}
-      <line x1="24" y1="30" x2="24" y2="38" stroke="#c5a44e" strokeWidth="1.5" strokeLinecap="round" />
-      {/* Base */}
-      <line x1="19" y1="38" x2="29" y2="38" stroke="#c5a44e" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
+    <img
+      src="/roundtable54/roundel.png"
+      alt="RT54 Roundel"
+      className={`h-10 w-10 rounded-full ${className}`}
+    />
   );
 }
 
@@ -70,8 +49,8 @@ export default function Navbar() {
   const navLinkClass = ({ isActive }) =>
     `relative py-1 text-sm tracking-wide uppercase transition-colors duration-200 ${
       isActive
-        ? 'text-gold after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-[2px] after:bg-gold after:rounded-full'
-        : 'text-cream/70 hover:text-gold-light'
+        ? 'text-gold after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-[2px] after:bg-crimson after:rounded-full'
+        : 'text-grey-light/70 hover:text-gold-light'
     }`;
 
   return (
@@ -81,8 +60,8 @@ export default function Navbar() {
           visible ? 'translate-y-0' : '-translate-y-full'
         } ${
           scrolled
-            ? 'bg-navy/95 backdrop-blur-md shadow-lg shadow-black/20'
-            : 'bg-navy/80 backdrop-blur-sm'
+            ? 'bg-black-rich/95 backdrop-blur-md shadow-lg shadow-black/20'
+            : 'bg-black-rich/80 backdrop-blur-sm'
         }`}
       >
         <nav className="mx-auto max-w-7xl flex items-center justify-between px-5 lg:px-8 h-16 md:h-[72px]">
@@ -92,7 +71,7 @@ export default function Navbar() {
             className="flex items-center gap-2.5 group"
             onClick={() => setMobileOpen(false)}
           >
-            <ShieldIcon className="w-9 h-9 md:w-10 md:h-10 transition-transform duration-300 group-hover:scale-105" />
+            <RoundelLogo className="w-9 h-9 md:w-10 md:h-10 transition-transform duration-300 group-hover:scale-105" />
             <span className="font-[family-name:var(--font-display)] text-gold text-xl md:text-2xl font-bold tracking-wide">
               RT54
             </span>
@@ -113,7 +92,7 @@ export default function Navbar() {
           <button
             type="button"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-            className="md:hidden relative w-10 h-10 flex items-center justify-center text-cream/80 hover:text-gold transition-colors"
+            className="md:hidden relative w-10 h-10 flex items-center justify-center text-off-white/80 hover:text-gold transition-colors"
             onClick={() => setMobileOpen((o) => !o)}
           >
             <span className="sr-only">{mobileOpen ? 'Close' : 'Menu'}</span>
@@ -149,7 +128,7 @@ export default function Navbar() {
 
       {/* ── Mobile drawer ── */}
       <aside
-        className={`fixed top-0 right-0 z-40 h-full w-72 bg-navy-light shadow-2xl shadow-black/40 transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed top-0 right-0 z-40 h-full w-72 bg-black-rich shadow-2xl shadow-black/40 transition-transform duration-300 ease-out md:hidden ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -162,7 +141,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               className={({ isActive }) =>
                 `py-3 text-lg tracking-wide border-b border-white/5 transition-colors duration-200 ${
-                  isActive ? 'text-gold font-semibold' : 'text-cream/70 hover:text-gold-light'
+                  isActive ? 'text-gold font-semibold' : 'text-grey-light/70 hover:text-gold-light'
                 }`
               }
               style={{ animationDelay: `${i * 50}ms` }}
@@ -173,7 +152,7 @@ export default function Navbar() {
         </div>
 
         {/* Motto at bottom of drawer */}
-        <p className="absolute bottom-8 left-8 right-8 text-center text-xs text-slate/50 italic font-[family-name:var(--font-display)]">
+        <p className="absolute bottom-8 left-8 right-8 text-center text-xs text-grey/50 italic font-[family-name:var(--font-display)]">
           Adopt. Adapt. Improve.
         </p>
       </aside>

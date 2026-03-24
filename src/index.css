@@ -1,16 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #0a1628;
-  --color-navy-light: #132040;
-  --color-royal: #1e3a6e;
-  --color-royal-light: #2a4f8f;
-  --color-gold: #c5a44e;
-  --color-gold-light: #dac06a;
-  --color-gold-pale: #f0e6c8;
-  --color-cream: #faf8f2;
-  --color-slate: #94a3b8;
-  --color-charcoal: #1e293b;
+  --color-black-rich: #1a1a1a;
+  --color-black-soft: #2d2d2d;
+  --color-grey-dark: #3a3a3a;
+  --color-grey: #6b6b6b;
+  --color-grey-light: #b0b0b0;
+  --color-off-white: #f5f5f0;
+  --color-white-pure: #ffffff;
+  --color-crimson: #c41e2a;
+  --color-crimson-dark: #9e1822;
+  --color-crimson-light: #e63946;
+  --color-gold: #e8c840;
+  --color-gold-dark: #c9a820;
+  --color-gold-light: #f0d860;
+  --color-gold-pale: #faf3d0;
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
@@ -22,8 +26,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-cream);
-  color: var(--color-charcoal);
+  background-color: var(--color-off-white);
+  color: var(--color-black-rich);
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -34,25 +38,23 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.03;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
 }
 
-/* Geometric diamond pattern */
-.geo-pattern::after {
+/* Radial spoke pattern inspired by the roundel */
+.spoke-pattern::after {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.04;
-  background-image:
-    linear-gradient(30deg, var(--color-gold) 12%, transparent 12.5%, transparent 87%, var(--color-gold) 87.5%),
-    linear-gradient(150deg, var(--color-gold) 12%, transparent 12.5%, transparent 87%, var(--color-gold) 87.5%),
-    linear-gradient(30deg, var(--color-gold) 12%, transparent 12.5%, transparent 87%, var(--color-gold) 87.5%),
-    linear-gradient(150deg, var(--color-gold) 12%, transparent 12.5%, transparent 87%, var(--color-gold) 87.5%);
-  background-size: 80px 140px;
-  background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+  opacity: 0.03;
+  background: repeating-conic-gradient(
+    from 0deg,
+    transparent 0deg 10deg,
+    var(--color-white-pure) 10deg 20deg
+  );
   pointer-events: none;
   z-index: 1;
 }
@@ -67,9 +69,9 @@ body {
   to { opacity: 1; }
 }
 
-@keyframes golden-shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+@keyframes crimson-pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
 }
 
 .animate-fade-up {
@@ -94,6 +96,11 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: golden-shimmer 4s linear infinite;
+}
+
+@keyframes golden-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
 }
 
 .reveal {
