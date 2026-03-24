@@ -7,6 +7,7 @@ const categoryColors = {
   Community: 'bg-crimson/15 text-crimson',
   Charity: 'bg-crimson/15 text-crimson',
   News: 'bg-black-rich/10 text-black-rich',
+  EuroMeeting: 'bg-gold/15 text-gold',
 };
 
 export default function BlogPost() {

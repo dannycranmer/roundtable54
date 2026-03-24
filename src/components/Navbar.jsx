@@ -5,6 +5,7 @@ const links = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/events', label: 'Events' },
+  { to: '/euromeeting', label: 'EuroMeeting' },
   { to: '/gallery', label: 'Gallery' },
   { to: '/blog', label: 'Blog' },
   { to: '/contact', label: 'Contact' },

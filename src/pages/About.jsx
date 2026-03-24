@@ -51,6 +51,9 @@ export default function About() {
               </h2>
               {/* Decorative vertical line */}
               <div className="hidden lg:block w-px h-24 bg-gradient-to-b from-gold/40 to-transparent mt-8" />
+              <div className="hidden lg:block mt-6 rounded-sm overflow-hidden">
+                <img src="/roundtable54/images/community-event.jpg" alt="Round Table 54 community event" className="w-full" loading="lazy" />
+              </div>
             </div>
 
             {/* Right — narrative */}
@@ -74,6 +77,13 @@ export default function About() {
                 We run some of the town's biggest events, raise thousands for local causes,
                 and build friendships that last a lifetime. We're not about pomp and ceremony.
                 We're about getting stuck in, having a laugh, and leaving things better than we found them.
+              </p>
+              <p>
+                King's Lynn has been part of the Round Table family since the 1930s. Our members arrange
+                local events that bring communities together — most notably our Gin Festival and Food Festival.
+                We support local causes with advice, manpower, and resources, and every penny we raise goes
+                directly to where it's needed. Along the way, our members develop real skills — confidence,
+                event management, leadership — and build networks that stretch from Norfolk to 65 countries worldwide.
               </p>
             </div>
           </div>

@@ -31,6 +31,9 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const subject = encodeURIComponent(`RT54 Website Enquiry from ${form.name}`);
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\nHow they heard about us: ${form.hearAbout || 'Not specified'}\n\nMessage:\n${form.message}`);
+    window.location.href = `mailto:roundtable54kl@gmail.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
@@ -240,8 +243,8 @@ export default function Contact() {
                   </h3>
 
                   <p className="text-grey-light leading-relaxed mb-3">
-                    Open to men aged <span className="text-gold font-semibold">18&ndash;45</span>. No commitment
-                    needed — just come along to a meeting and see what you think.
+                    Open to men aged <span className="text-gold font-semibold">18&ndash;45</span>. We meet every two weeks — no commitment
+                    needed, just come along and see what you think.
                   </p>
                   <p className="text-grey-light leading-relaxed">
                     Good company, great events, and the chance to make a real
@@ -259,7 +262,7 @@ export default function Contact() {
                 <div className="space-y-4">
                   {/* Facebook */}
                   <a
-                    href="https://www.facebook.com/KingsLynnRT/"
+                    href="https://www.facebook.com/RoundTable54KL"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 rounded-xl border border-grey-light/10 hover:border-crimson/30 hover:bg-crimson/5 transition-all duration-300 group"
@@ -271,7 +274,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-semibold text-black-rich text-sm">Facebook</p>
-                      <p className="text-grey-light text-xs">@KingsLynnRT</p>
+                      <p className="text-grey-light text-xs">@RoundTable54KL</p>
                     </div>
                   </a>
 
@@ -308,6 +311,22 @@ export default function Contact() {
                     <div>
                       <p className="font-semibold text-black-rich text-sm">Round Table GB&I</p>
                       <p className="text-grey-light text-xs">roundtable.co.uk</p>
+                    </div>
+                  </a>
+
+                  {/* Email */}
+                  <a
+                    href="mailto:roundtable54kl@gmail.com"
+                    className="flex items-center gap-4 p-4 rounded-xl border border-grey-light/10 hover:border-crimson/30 hover:bg-crimson/5 transition-all duration-300 group"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-grey-dark/10 flex items-center justify-center group-hover:bg-crimson/10 transition-colors duration-300">
+                      <svg className="w-5 h-5 text-grey-dark group-hover:text-crimson transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-black-rich text-sm">Email Us</p>
+                      <p className="text-grey-light text-xs">roundtable54kl@gmail.com</p>
                     </div>
                   </a>
                 </div>

@@ -6,6 +6,7 @@ const quickLinks = [
   { to: '/gallery', label: 'Gallery' },
   { to: '/blog', label: 'Blog' },
   { to: '/contact', label: 'Contact' },
+  { to: '/euromeeting', label: 'EuroMeeting' },
 ];
 
 function FacebookIcon({ className = '' }) {
@@ -74,6 +75,12 @@ export default function Footer() {
             <p className="text-sm text-grey-light/60 mb-5">
               Follow us for event updates, photos, and the occasional questionable banter.
             </p>
+            <a
+              href="mailto:roundtable54kl@gmail.com"
+              className="text-sm text-grey-light/60 hover:text-white-pure transition-colors duration-200 block mb-5"
+            >
+              roundtable54kl@gmail.com
+            </a>
             <div className="flex items-center gap-4">
               <a
                 href="https://facebook.com/RoundTable54KL"

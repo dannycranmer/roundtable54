@@ -83,6 +83,17 @@ export default function Home() {
         {/* Watermark roundel */}
         <RoundelWatermark className="absolute w-[600px] h-[600px] md:w-[800px] md:h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none" />
 
+        {/* Community event background photo */}
+        <div
+          className="absolute inset-0 z-[1] pointer-events-none"
+          style={{
+            backgroundImage: 'url(/roundtable54/images/community-event.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.15,
+          }}
+        />
+
         {/* Radial vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#111111_80%)] z-[2] pointer-events-none" />
 
@@ -238,6 +249,12 @@ export default function Home() {
               >
                 {/* Coloured top bar */}
                 <div className="h-1 bg-gradient-to-r from-gold to-gold-light" />
+
+                {evt.image && (
+                  <div className="h-40 overflow-hidden">
+                    <img src={evt.image} alt={evt.title} className="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                )}
 
                 <div className="p-7 lg:p-8">
                   {/* Category + Date */}

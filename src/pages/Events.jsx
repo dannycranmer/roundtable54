@@ -76,6 +76,12 @@ export default function Events() {
                 {/* Card top accent */}
                 <div className="h-1.5 bg-gradient-to-r from-gold via-gold-light to-gold" />
 
+                {event.image && (
+                  <div className="h-44 overflow-hidden">
+                    <img src={event.image} alt={event.title} className="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                )}
+
                 <div className="p-7 md:p-8">
                   {/* Category badge */}
                   <span
@@ -123,6 +129,13 @@ export default function Events() {
                   <p className="text-black-rich/70 leading-relaxed text-[0.95rem]">
                     {event.description}
                   </p>
+
+                  {event.sponsors && (
+                    <div className="mt-4 pt-3 border-t border-grey-light/10">
+                      <p className="text-[10px] uppercase tracking-wider text-grey-light/60 mb-1">Sponsored by</p>
+                      <p className="text-xs text-grey-light">{event.sponsors.join(' · ')}</p>
+                    </div>
+                  )}
                 </div>
               </article>
             ))}

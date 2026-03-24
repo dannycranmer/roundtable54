@@ -2,45 +2,11 @@ import { useState } from 'react';
 import { galleryImages } from '../data/gallery';
 import useScrollReveal from '../hooks/useScrollReveal';
 
-const categories = ['All', 'Events', 'Charity', 'Social', 'Club'];
-
-/* Generate a unique gradient for each image based on its index */
-const gradients = [
-  'from-black-rich via-grey-dark to-black-soft',
-  'from-grey-dark via-grey to-black-rich',
-  'from-black-soft via-black-rich to-grey-dark',
-  'from-grey via-grey-dark to-black-soft',
-  'from-black-rich via-black-soft to-grey',
-  'from-grey-dark to-black-rich via-grey',
-  'from-black-soft to-grey-dark via-black-rich',
-  'from-black-rich via-grey to-grey-dark',
-];
-
-const gradientAngles = [
-  'bg-gradient-to-br',
-  'bg-gradient-to-tr',
-  'bg-gradient-to-bl',
-  'bg-gradient-to-r',
-  'bg-gradient-to-tl',
-  'bg-gradient-to-b',
-  'bg-gradient-to-t',
-  'bg-gradient-to-l',
-];
-
-/* Different heights for masonry effect */
-const heights = [
-  'h-64',
-  'h-80',
-  'h-72',
-  'h-96',
-  'h-64',
-  'h-80',
-  'h-72',
-  'h-64',
-];
+const categories = ['All', 'Events', 'EuroMeeting', 'Charity', 'Social', 'Community', 'Club'];
 
 export default function Gallery() {
   const [active, setActive] = useState('All');
+  const [lightbox, setLightbox] = useState(null);
   useScrollReveal();
 
   const filtered =
@@ -94,59 +60,38 @@ export default function Gallery() {
 
           {/* ── Masonry Grid ── */}
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-            {filtered.map((image, i) => {
-              const idx = image.id - 1;
-              return (
+            {filtered.map((image, i) => (
+              <div
+                key={image.id}
+                className="reveal break-inside-avoid group"
+                style={{ transitionDelay: `${i * 60}ms` }}
+              >
                 <div
-                  key={image.id}
-                  className="reveal break-inside-avoid group"
-                  style={{ transitionDelay: `${i * 60}ms` }}
+                  className="relative rounded-2xl overflow-hidden bg-black-rich cursor-pointer"
+                  onClick={() => setLightbox(image)}
                 >
-                  <div
-                    className={`relative ${heights[idx % heights.length]} rounded-2xl overflow-hidden ${gradientAngles[idx % gradientAngles.length]} ${gradients[idx % gradients.length]} cursor-pointer`}
-                  >
-                    {/* Placeholder content */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                      {/* Camera icon */}
-                      <svg
-                        className="w-12 h-12 text-off-white/20 mb-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={1}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Z"
-                        />
-                      </svg>
-                      <h3 className="font-[family-name:var(--font-display)] text-off-white/30 text-lg font-bold">
-                        {image.title}
-                      </h3>
-                    </div>
+                  <img
+                    src={image.image}
+                    alt={image.title}
+                    loading="lazy"
+                    className="w-full block object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
 
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-black-rich/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center">
-                      <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-gold/20 text-gold mb-4">
-                        {image.category}
-                      </span>
-                      <h3 className="font-[family-name:var(--font-display)] text-off-white text-xl font-bold mb-2">
-                        {image.title}
-                      </h3>
-                      <p className="text-grey-light text-sm leading-relaxed max-w-xs">
-                        {image.description}
-                      </p>
-                    </div>
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black-rich/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center">
+                    <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-gold/20 text-gold mb-4">
+                      {image.category}
+                    </span>
+                    <h3 className="font-[family-name:var(--font-display)] text-off-white text-xl font-bold mb-2">
+                      {image.title}
+                    </h3>
+                    <p className="text-grey-light text-sm leading-relaxed max-w-xs">
+                      {image.description}
+                    </p>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
 
           {filtered.length === 0 && (
@@ -156,6 +101,42 @@ export default function Gallery() {
           )}
         </div>
       </section>
+
+      {/* ── Lightbox ── */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black-rich/90 backdrop-blur-sm p-4"
+          onClick={() => setLightbox(null)}
+        >
+          {/* Close button */}
+          <button
+            onClick={() => setLightbox(null)}
+            className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-off-white text-2xl"
+            aria-label="Close lightbox"
+          >
+            &times;
+          </button>
+
+          <div
+            className="flex flex-col items-center max-w-5xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={lightbox.image}
+              alt={lightbox.title}
+              className="max-w-full max-h-[80vh] rounded-xl object-contain shadow-2xl"
+            />
+            <div className="mt-4 text-center">
+              <h3 className="font-[family-name:var(--font-display)] text-off-white text-xl font-bold">
+                {lightbox.title}
+              </h3>
+              <p className="text-grey-light text-sm mt-1">
+                {lightbox.description}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

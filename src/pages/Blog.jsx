@@ -7,6 +7,7 @@ const categoryColors = {
   Community: 'bg-crimson/15 text-crimson',
   Charity: 'bg-crimson/15 text-crimson',
   News: 'bg-black-rich/10 text-black-rich',
+  EuroMeeting: 'bg-gold/15 text-gold',
 };
 
 export default function Blog() {
@@ -45,26 +46,30 @@ export default function Blog() {
               className="block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-black-rich/8 transition-all duration-500"
             >
               <div className="grid md:grid-cols-2 gap-0">
-                {/* Left - gradient placeholder */}
-                <div className="relative h-64 md:h-auto bg-gradient-to-br from-black-rich via-grey-dark to-grey">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                    <svg
-                      className="w-16 h-16 text-off-white/15 mb-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={0.8}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6V7.5Z"
-                      />
-                    </svg>
-                    <span className="font-[family-name:var(--font-display)] text-off-white/20 text-2xl font-bold">
-                      Featured
-                    </span>
-                  </div>
+                {/* Left - image or gradient */}
+                <div className="relative h-64 md:h-auto bg-gradient-to-br from-black-rich via-grey-dark to-grey overflow-hidden">
+                  {featured.image ? (
+                    <img src={featured.image} alt={featured.title} className="w-full h-full object-cover" loading="lazy" />
+                  ) : (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+                      <svg
+                        className="w-16 h-16 text-off-white/15 mb-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={0.8}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6V7.5Z"
+                        />
+                      </svg>
+                      <span className="font-[family-name:var(--font-display)] text-off-white/20 text-2xl font-bold">
+                        Featured
+                      </span>
+                    </div>
+                  )}
                   {/* Crimson accent strip */}
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-crimson via-crimson-dark to-crimson" />
                 </div>
@@ -125,6 +130,12 @@ export default function Blog() {
                 >
                   {/* Top accent */}
                   <div className="h-1 bg-gradient-to-r from-gold via-gold-light to-gold" />
+
+                  {post.image && (
+                    <div className="h-48 overflow-hidden">
+                      <img src={post.image} alt={post.title} className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                  )}
 
                   <div className="p-7 md:p-9">
                     <div className="flex items-center gap-4 mb-5">

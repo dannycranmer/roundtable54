@@ -4,9 +4,10 @@ export const events = [
     title: "King's Lynn Food Festival 2026",
     date: "July 25-26, 2026",
     location: "Tuesday Market Place, King's Lynn",
-    description: "Our flagship summer event returns bigger than ever! Two full days featuring 32 food stalls, live music, craft beverages, and community spirit. All proceeds go to local causes.",
+    description: "Our flagship summer event returns bigger than ever! Two full days of incredible street food from Loading Burgers & Fries, Sam's Ice Cream Truck, Askers Wood Fired Pizza, The Loaded Fries, The Arrogant BBQ, First Sip, German sausage, Churros, and Cheeseandbees — plus live music, craft beverages, and community spirit. All proceeds go to local causes.",
     category: "flagship",
-    image: null
+    image: '/roundtable54/images/food-festival/banner.png',
+    sponsors: ['Crown & Mitre', 'KL1', 'Lovell']
   },
   {
     id: 2,
@@ -24,12 +25,12 @@ export const events = [
     location: "Snettisham Light Railway",
     description: "Our annual partnership with Snettisham Light Railway. Running refreshment stalls, tombola, bouncy castles and more alongside the miniature steam trains.",
     category: "charity",
-    image: null
+    image: '/roundtable54/images/community-event.jpg'
   },
   {
     id: 4,
     title: "Monthly Social Meet",
-    date: "Every 2nd Tuesday",
+    date: "Every two weeks",
     location: "King's Lynn",
     description: "Our regular meet-up. Whether it's a curry night, quiz, BBQ, or something completely different — there's always something on. New faces welcome.",
     category: "social",
@@ -52,5 +53,14 @@ export const events = [
     description: "Test your knowledge and raise money for local causes. Teams of up to 6. Prizes for winners (and a special prize for last place).",
     category: "charity",
     image: null
+  },
+  {
+    id: 7,
+    title: "EuroMeeting 2026",
+    date: "2026",
+    location: "Auch, France",
+    description: "The flagship international Round Table gathering — where RT54 chapters from different countries convene for a weekend of fellowship, culture, and cross-border banter. Auch 2026 promises to be one for the books.",
+    category: "flagship",
+    image: '/roundtable54/images/euromeeting/auch-2026.png'
   }
 ];

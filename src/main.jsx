@@ -10,6 +10,7 @@ import Gallery from './pages/Gallery'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import Contact from './pages/Contact'
+import EuroMeeting from './pages/EuroMeeting'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'about', element: <About /> },
       { path: 'events', element: <Events /> },
+      { path: 'euromeeting', element: <EuroMeeting /> },
       { path: 'gallery', element: <Gallery /> },
       { path: 'blog', element: <Blog /> },
       { path: 'blog/:slug', element: <BlogPost /> },

@@ -6,8 +6,9 @@ export const posts = [
     date: "August 3, 2025",
     author: "RT54",
     excerpt: "Our inaugural King's Lynn Food Festival drew hundreds to the Tuesday Market Place for an afternoon of incredible food, live music, and community spirit.",
-    content: "What started as an ambitious idea became one of King's Lynn's standout summer events. The Tuesday Market Place was transformed with 10+ food vendors serving everything from wood-fired pizza to artisan ice cream, while local bands kept the energy high throughout the day. The turnout exceeded all expectations, and we're thrilled to announce that 100% of the proceeds went directly to local charities. A massive thank you to everyone who came out, our incredible volunteers, and the vendors who made it all possible. See you in 2026 — and it's going to be even bigger.",
-    category: "Events"
+    content: "What started as an ambitious idea became one of King's Lynn's standout summer events. The Tuesday Market Place was transformed with an incredible lineup of street food vendors — Loading Burgers & Fries, Sam's Ice Cream Truck, Askers Wood Fired Pizza, The Loaded Fries, The Arrogant BBQ, First Sip, German sausage, Churros, and Cheeseandbees — while local bands kept the energy high throughout the day. The turnout exceeded all expectations, and we're thrilled to announce that 100% of the proceeds went directly to local charities. A massive thank you to everyone who came out, our incredible volunteers, and every single vendor who made it all possible. See you in 2026 — and it's going to be even bigger.",
+    category: "Events",
+    image: '/roundtable54/images/food-festival/banner.png'
   },
   {
     id: 2,
@@ -27,7 +28,8 @@ export const posts = [
     author: "RT54",
     excerpt: "Another fantastic charity weekend at Snettisham Light Railway with our friends from King's Lynn Ladies Circle.",
     content: "The sun was out (for once) and so were we — running refreshment stalls, tombola stands, bouncy castles, and various guessing games alongside the brilliant miniature steam trains at Snettisham Light Railway. This annual event is always a highlight, not least because we team up with our sister group, King's Lynn Ladies Circle, to make it happen. It's a proper community day out, and seeing families enjoying themselves while we raise money for local charities is exactly what Round Table is all about. Thanks to everyone who helped out and everyone who came along. The steam trains were, as always, absolutely class.",
-    category: "Charity"
+    category: "Charity",
+    image: '/roundtable54/images/community-event.jpg'
   },
   {
     id: 4,
@@ -38,5 +40,16 @@ export const posts = [
     excerpt: "New year, bigger ambitions. Here's what King's Lynn Round Table 54 has planned for 2026.",
     content: "Our motto has never felt more relevant. After a cracking 2025 that saw us launch the Food Festival, continue our legendary Gin Festival, and support countless local causes, we're not slowing down. In 2026, the Food Festival expands to a full two-day weekend with 32 stalls. We're planning new community projects, more social events, and even an international trip (details coming soon). We're also on a mission to grow our membership — if you know someone aged 18-45 who wants to make a difference while having a laugh, point them our way. Round Table is what you make it, and we plan to make 2026 our best year yet.",
     category: "News"
+  },
+  {
+    id: 5,
+    slug: "euromeeting-wolfsburg-2025",
+    title: "EuroMeeting 2025: Wolfsburg, Germany",
+    date: "September 15, 2025",
+    author: "RT54",
+    excerpt: "RT54 heads to Germany for the 2025 EuroMeeting — VW factory tours, international fellowship, and plenty of beer.",
+    content: "What happens when you send a bunch of Tablers from King's Lynn to Wolfsburg? Absolute scenes, that's what. The 2025 EuroMeeting was a brilliant showcase of everything that makes Round Table special on an international scale. We toured the legendary Volkswagen factory (the sheer scale of the place is mind-blowing), explored Wolfsburg's Autostadt, and spent the evenings doing what Tablers do best — swapping stories, sharing laughs, and building friendships that cross borders. Meeting chapters from across Europe is a reminder that Round Table is so much bigger than our little corner of Norfolk. Same values, same banter, different accents. If you've ever wondered what the international side of Round Table looks like, this was it. Roll on Auch 2026.",
+    category: "EuroMeeting",
+    image: '/roundtable54/images/euromeeting/wolfsburg-2025.jpg'
   }
 ];
